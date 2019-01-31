@@ -1,8 +1,0 @@
-.signup-container {
-    width: 100%;
-    padding: 20px 40px;
-}
-
-.signup-container:focus, .signup-container button:focus {
-    outline: none;
-}
