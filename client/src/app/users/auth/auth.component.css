@@ -21,6 +21,14 @@ section {
     margin: 0px auto;
 }
 
+#form-container {
+    left: 0px;
+    width: 500px;
+    position: absolute;
+    height: 100%;
+    transition: left 0.6s linear;
+}
+
 #options-container {
     top: 0px;
     left: 0px;
@@ -43,6 +51,14 @@ section {
     animation-fill-mode: forwards;
 }
 
+#options-container.signup + #form-container {
+    left: 300px;
+}
+
+#options-container.signin + #form-container {
+    left: 0px;
+}
+
 #button-container {
     width: 300px;
     height: 100%;
@@ -60,10 +76,19 @@ section {
     color: var(--color-3);
     border-radius: 25px;
     font-weight: 600;
+    text-align: center;
 }
 
-#options-button:focus {
-    outline: none;
+#options-button a {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+#options-button a:visited {
+    color: var(--color-3);
 }
 
 #options-button:hover {
@@ -123,10 +148,21 @@ section {
     left: 0px;
 }
 
-.square {
+.square-1 {
     position: absolute;
     top: 30px;
     left: 140px;
+	height: 20px;
+    width: 20px;
+    background-color: rgb(255, 255, 255, 0.15);
+    transform: rotate(45deg);
+    transition: left .6s linear;
+}
+
+.square-2 {
+    position: absolute;
+    top: 120px;
+    left: 380px;
 	height: 40px;
     width: 40px;
     background-color: rgb(255, 255, 255, 0.15);
@@ -134,7 +170,45 @@ section {
     transition: left .6s linear;
 }
 
-.circle {
+.triangle-left-1 {
+    position: absolute;
+    top: -30px;
+    right: 0px;
+	width: 0;
+	height: 0;
+	border-top: 80px solid transparent;
+	border-right: 160px solid rgb(255, 255, 255, 0.15);
+    border-bottom: 80px solid transparent;
+    transform: rotate(-45deg);
+    transition: right .6s linear;
+}
+
+.triangle-left-2 {
+    position: absolute;
+    bottom: 220px;
+    left: 270px;
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 45px solid rgb(255, 255, 255, 0.15);
+    border-bottom: 25px solid transparent;
+    transition: left .6s linear;
+}
+
+.triangle-right {
+    position: absolute;
+    bottom: 20px;
+    right: 140px;
+	width: 0;
+	height: 0;
+	border-top: 40px solid transparent;
+	border-left: 80px solid rgb(255, 255, 255, 0.15);
+    border-bottom: 40px solid transparent;
+    transition: right .6s linear;
+    transform: rotate(45deg);
+}
+
+.circle-1 {
     position: absolute;
     bottom: -80px;
     left: -80px;
@@ -145,21 +219,111 @@ section {
     transition: left .6s linear;
 }
 
-#options-container.signin .circle {
+.circle-2 {
+    position: absolute;
+    bottom: 190px;
+    right: 320px;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transition: right .6s linear;
+}
+
+.rectangle-1 {
+    position: absolute;
+    bottom: 50px;
+    right: 350px;
+    height: 15px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.15);
+    transform: rotate(45deg);
+    transition: right .6s linear;
+}
+
+.rectangle-2 {
+    position: absolute;
+    bottom: 160px;
+    right: 20px;
+    height: 40px;
+    width: 15px;
+    background-color: rgb(255, 255, 255, 0.15);
+    transform: rotate(-20deg);
+    transition: right .6s linear;
+}
+
+#options-container.signin .rectangle-1 {
+    right: 330px;
+}
+
+#options-container.signup .rectangle-1 {
+    right: 350px;
+}
+
+#options-container.signin .rectangle-2 {
+    right: 0px;
+}
+
+#options-container.signup .rectangle-2 {
+    right: 20px;
+}
+
+#options-container.signin .circle-1 {
     left: -50px;
 }
 
-#options-container.signup .circle {
+#options-container.signup .circle-1 {
     left: -80px;
 }
 
-#options-container.signin .square {
+#options-container.signin .circle-2 {
+    right: 280px;
+}
+
+#options-container.signup .circle-2 {
+    right: 320px;
+}
+
+#options-container.signin .square-1 {
     left: 180px;
 }
 
-#options-container.signup .square {
+#options-container.signup .square-1 {
     left: 140px;
 }
+
+#options-container.signin .square-2 {
+    left: 380px;
+}
+
+#options-container.signup .square-2 {
+    left: 360px;
+}
+
+#options-container.signin .triangle-left-1 {
+    right: -50px;
+}
+
+#options-container.signup .triangle-left-1 {
+    right: -30px;
+}
+
+#options-container.signin .triangle-left-2 {
+    left: 310px;
+}
+
+#options-container.signup .triangle-left-2 {
+    left: 270px;
+}
+
+#options-container.signin .triangle-right {
+    right: 100px;
+}
+
+#options-container.signup .triangle-right {
+    right: 140px;
+}
+
 
 @keyframes move-clip-path-right {
     0% {
@@ -202,7 +366,7 @@ section {
     }
     80% {
         left: 360px;
-        width: 300px;
+        width: 400px;
     }
     100% {
         left: 500px;
@@ -220,8 +384,8 @@ section {
         width: 400px;
     }
     80% {
-        left: 140px;
-        width: 300px;
+        left: 40px;
+        width: 400px;
     }
     100% {
         left: 0px;

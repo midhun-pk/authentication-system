@@ -10,12 +10,23 @@
         <div>To keep conected with us please login with your personal info</div>
       </div>
       <div id="button-container">
-        <button (click)="onToggle()" id="options-button">{{
-          signUpSelected ? 'SIGN UP': 'SIGN IN' }}</button>
+        <div (click)="onToggle()" id="options-button">
+          <a *ngIf="!signUpSelected" routerLink="signup">SIGN UP</a>
+          <a *ngIf="signUpSelected" routerLink="signin">SIGN IN</a>
+        </div>
       </div>
-      <div class="square"></div>
-      <div class="circle"></div>
+      <div class="square-1"></div>
+      <div class="square-2"></div>
+      <div class="triangle-left-1"></div>
+      <div class="triangle-left-2"></div>
+      <div class="triangle-right"></div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="rectangle-1"></div>
+      <div class="rectangle-2"></div>
     </div>
-    <router-outlet></router-outlet>
+    <div id="form-container" [@animRoutes]="getRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
   </div>
 </section>

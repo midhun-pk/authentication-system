@@ -10,8 +10,8 @@ const routes: Routes = [
   {
     path: 'auth', component: AuthComponent, children: [
       { path: '', redirectTo: 'signin', pathMatch: 'full' },
-      { path: 'signin', component: SigninComponent },
-      { path: 'signup', component: SignupComponent }
+      { path: 'signin', component: SigninComponent, data: { page: 'signin' } },
+      { path: 'signup', component: SignupComponent, data: { page: 'signup' } }
     ]
   }
 ];
