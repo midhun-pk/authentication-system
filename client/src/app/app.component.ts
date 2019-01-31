@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'authentication-system';
-  animationCompleted = true;
+  animationCompleted = false;
 
   constructor() {
     setTimeout(() => {

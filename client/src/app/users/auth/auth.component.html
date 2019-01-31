@@ -2,15 +2,15 @@
   <div id="content-container">
     <div id="options-container" [ngClass]="signUpSelected ? 'signup': 'signin'">
       <div id="signup-message" class="message">
-        <div>Hello, Friend!</div>
-        <div>Enter your personal details and start journey with us</div>
-      </div>
-      <div id="signin-message" class="message">
         <div>Welcome Back!</div>
         <div>To keep conected with us please login with your personal info</div>
       </div>
+      <div id="signin-message" class="message">
+        <div>Hello, Friend!</div>
+        <div>Enter your personal details and start journey with us</div>
+      </div>
       <div id="button-container">
-        <div (click)="onToggle()" id="options-button">
+        <div id="options-button">
           <a *ngIf="!signUpSelected" routerLink="signup">SIGN UP</a>
           <a *ngIf="signUpSelected" routerLink="signin">SIGN IN</a>
         </div>
