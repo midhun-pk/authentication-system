@@ -1,0 +1,75 @@
+.header-container {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    background-color: var(--color-1);
+    z-index: 11;
+    width: 100%;
+    height: 70px;
+    box-shadow: none;
+    transform: translateY(0px);
+    filter: none !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+    padding: 0px 50px;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.8);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+    color: var(--color-3);
+    position: relative;
+    z-index: 12;
+}
+
+#header-logo {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+#header-nav-links {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+#header-nav-list div {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.nav-list-item {
+    position: relative;
+    font-size: 13px;
+    margin: 0px 10px;
+}
+
+.nav-link {
+    padding: 12px 10px;
+    display: inline-block;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--color-2);
+}

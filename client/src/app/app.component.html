@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-loader *ngIf="!animationCompleted"></app-loader>
+<div *ngIf="animationCompleted">
+  <app-header></app-header>
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

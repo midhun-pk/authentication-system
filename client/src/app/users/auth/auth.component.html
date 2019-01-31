@@ -1,0 +1,21 @@
+<section>
+  <div id="content-container">
+    <div id="options-container" [ngClass]="signUpSelected ? 'signup': 'signin'">
+      <div id="signup-message" class="message">
+        <div>Hello, Friend!</div>
+        <div>Enter your personal details and start journey with us</div>
+      </div>
+      <div id="signin-message" class="message">
+        <div>Welcome Back!</div>
+        <div>To keep conected with us please login with your personal info</div>
+      </div>
+      <div id="button-container">
+        <button (click)="onToggle()" id="options-button">{{
+          signUpSelected ? 'SIGN UP': 'SIGN IN' }}</button>
+      </div>
+      <div class="square"></div>
+      <div class="circle"></div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</section>

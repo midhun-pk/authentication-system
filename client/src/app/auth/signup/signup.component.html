@@ -1,0 +1,37 @@
+<form #form="ngForm" (ngSubmit)="onSignUp(form)">
+  <div>
+    <input name="username" type="text" placeholder="Username" required>
+  </div>
+  <div>
+    <input name="email" type="email" placeholder="Email" required>
+  </div>
+  <div>
+    <input name="password" type="password" placeholder="Password" required>
+  </div>
+  <div class="button-container">
+    <button type="submit">SIGN UP</button>
+  </div>
+</form>
+
+<!-- <form name="form" class="signup-container" (ngSubmit)="vm.signup(form.$valid)" #form="ngF">
+  <div class="input-container" ng-class="vm.isValid(form, 'username')">
+    <div class="icon" ng-class="vm.isValid(form, 'username')"><i class="fa fa-user"></i></div>
+    <input name="username" type="text" placeholder="Username" ng-model="vm.credentials.username" required>
+  </div>
+  <div class="input-container" ng-class="vm.isValid(form, 'email')">
+    <div class="icon" ng-class="vm.isValid(form, 'email')"><i class="fa fa-envelope"></i></div>
+    <input name="email" type="email" placeholder="Email" ng-model="vm.credentials.email" required>
+  </div>
+  <div class="input-container" ng-class="vm.isValid(form, 'password')">
+    <div class="icon" ng-class="vm.isValid(form, 'password')"><i class="fa fa-lock"></i></div>
+    <input name="password" type="password" placeholder="Password" ng-model="vm.credentials.password" required>
+  </div>
+  <div class="input-container" ng-class="vm.isValid(form, 'confirmpassword')">
+    <div class="icon" ng-class="vm.isValid(form, 'confirmpassword')"><i class="fa fa-lock"></i></div>
+    <input name="confirmpassword" type="password" placeholder="Confirm Password" ng-model="vm.credentials.confirmPassword"
+      required>
+  </div>
+  <div class="button-container">
+    <button type="submit">Sign Up</button>
+  </div>
+</form> -->
