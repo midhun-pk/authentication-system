@@ -64,6 +64,7 @@ export class AuthComponent implements OnInit {
   signUpSelected: Boolean;
 
   constructor(private router: Router) {
+    this.signUpSelected = this.router.url.endsWith('signup');
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.signUpSelected = event.url.endsWith('signup');
