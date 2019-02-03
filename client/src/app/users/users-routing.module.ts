@@ -4,9 +4,16 @@ import { AccountComponent } from './account/account.component';
 import { AuthComponent } from './auth/auth.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthGuard } from './auth/auth-guard.service';
+import { VerifyAccountComponent } from './account/verify-account/verify-account.component';
 
 const routes: Routes = [
-  { path: 'account', component: AccountComponent },
+  {
+    path: 'user', children: [
+      { path: 'account', canActivate: [AuthGuard], component: AccountComponent },
+      { path: 'verify/:token', component: VerifyAccountComponent }
+    ]
+  },
   {
     path: 'auth', component: AuthComponent, children: [
       { path: '', redirectTo: 'signin', pathMatch: 'full' },

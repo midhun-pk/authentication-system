@@ -8,7 +8,6 @@ import {
   animate,
   group,
   animateChild,
-  state,
   keyframes
 } from '@angular/animations';
 
@@ -27,11 +26,9 @@ import {
               animate(
                 '0.3s linear',
                 keyframes([
-                  style({ opacity: 0 }),
-                  style({ opacity: 0 }),
-                  style({ opacity: 0 }),
-                  style({ opacity: 0 }),
-                  style({ opacity: 1 })
+                  style({ opacity: 0, offset: 0 }),
+                  style({ opacity: 0, offset: 0.9 }),
+                  style({ opacity: 1, offset: 1 })
                 ])
               ),
               animateChild()
@@ -44,11 +41,9 @@ import {
               animate(
                 '.3s linear',
                 keyframes([
-                  style({ opacity: 1 }),
-                  style({ opacity: 1 }),
-                  style({ opacity: 1 }),
-                  style({ opacity: 1 }),
-                  style({ opacity: 0 })
+                  style({ opacity: 1, offset: 0 }),
+                  style({ opacity: 1, offset: 0.9 }),
+                  style({ opacity: 0, offset: 1 })
                 ])
               ),
               animateChild()
@@ -64,15 +59,16 @@ export class AuthComponent implements OnInit {
   signUpSelected: Boolean;
 
   constructor(private router: Router) {
+  }
+
+  ngOnInit() {
     this.signUpSelected = this.router.url.endsWith('signup');
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.signUpSelected = event.url.endsWith('signup');
       }
     });
-  }
 
-  ngOnInit() {
   }
 
   getRoute(outlet: RouterOutlet) {

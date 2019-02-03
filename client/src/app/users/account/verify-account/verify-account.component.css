@@ -1,0 +1,104 @@
+section {
+    max-width: 1000px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0px auto;
+    color: var(--color-1);
+    padding-top: 140px;
+}
+
+#content-container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: var(--color-1);
+    z-index: 0;
+    margin: 0px auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 50px;
+}
+
+.message-container {
+    width: 100%;
+    margin: 40px 0px;
+}
+
+.input-container {
+    position: relative;
+    height: 50px;
+    border-bottom: 2px solid var(--color-6);
+    display: flex;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.input-container .icon {
+    position: relative;
+    width: 40px;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    padding-top: 18px;
+    fill: var(--color-6);
+}
+
+.input-container input {
+    padding-top: 20px;
+    height: 100%;
+    flex: 1 1 auto;
+    border: none;
+    background-color: transparent;
+    color: var(--color-6);
+}
+
+.input-container input:focus {
+    outline: none;
+}
+
+.input-container input::placeholder {
+    color: var(--color-6);
+}
+
+.form-container {
+    position: relative;
+    width: 100%;
+    margin: 40px 0px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-container {
+    margin-top: 35px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.button-container button {
+    height: 100%;
+    width: 300px;
+    background-color: var(--color-4);
+    border: 1px solid var(--color-4);
+    border-radius: 25px;
+    font-size: 15px;
+    color: var(--color-3);
+}
+
+.success {
+    color: var(--color-3);
+}
+
+.error {
+    color: var(--color-3);
+}

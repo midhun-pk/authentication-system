@@ -1,0 +1,12 @@
+section {
+    max-width: 1000px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0px auto;
+    color: var(--color-1);
+    padding-top: 140px;
+}
