@@ -8,6 +8,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  message = '';
 
   constructor(private authService: AuthService) { }
 
@@ -18,9 +19,17 @@ export class SignupComponent implements OnInit {
     const username = form.value.username;
     const email = form.value.email;
     const password = form.value.password;
+    if (!username || !email || !password) {
+      this.message = 'Please provide username, email and password';
+      return;
+    }
     this.authService.signup(username, email, password).subscribe(
-      (response) => { console.log(response); },
-      (error) => { console.log(error); }
+      (successResponse) => {
+        this.message = successResponse['message'];
+      },
+      (errorResponse) => {
+        this.message = errorResponse.error.message;
+      }
     )
   }
 

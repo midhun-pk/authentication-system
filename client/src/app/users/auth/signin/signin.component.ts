@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  errorMessage = '';
+  message = '';
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -19,13 +19,19 @@ export class SigninComponent implements OnInit {
   onSubmit(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
+
+    if (!email || !password) {
+      this.message = 'Please provide email and password';
+      return;
+    }
+
     this.authService.signin(email, password).subscribe(
       (successResponse) => {
         this.authService.setToken(successResponse['token']);
         this.router.navigate(['home']);
       },
       (errorResponse) => {
-        console.log(errorResponse);
+        this.message = errorResponse.error.message;
       }
     )
   }

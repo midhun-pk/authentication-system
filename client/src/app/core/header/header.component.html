@@ -7,12 +7,17 @@
     </div>
     <div id="header-nav-links">
       <ul id="header-nav-list">
-        <div>
+        <div *ngIf="!authService.isAuthenticated()">
           <li class="nav-list-item">
             <a class="nav-link" routerLink="/auth/signup">SIGN UP</a>
           </li>
           <li class="nav-list-item">
             <a class="nav-link" routerLink="/auth">SIGN IN</a>
+          </li>
+        </div>
+        <div *ngIf="authService.isAuthenticated()">
+          <li class="nav-list-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
           </li>
         </div>
       </ul>

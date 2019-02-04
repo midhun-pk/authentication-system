@@ -1,27 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-    loggedIn = true;
+    private tokenKey = 'AuthenticationSystemAppJWT';
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient, private router: Router) { }
 
     isAuthenticated() {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(this.loggedIn);
-            }, 800);
-        });
-        return promise;
+        return sessionStorage.getItem(this.tokenKey) ? true : false;
     }
 
     getToken() {
-        return sessionStorage.getItem('AuthenticationSystemAppJWT') || '';
+        return sessionStorage.getItem(this.tokenKey) || '';
     }
 
     setToken(token: string) {
-        sessionStorage.setItem('AuthenticationSystemAppJWT', token);
+        sessionStorage.setItem(this.tokenKey, token);
+    }
+
+    removeToken() {
+        sessionStorage.removeItem(this.tokenKey);
     }
 
     signin(email: string, password: string) {
@@ -29,7 +29,8 @@ export class AuthService {
     }
 
     logout() {
-        this.loggedIn = false;
+        this.removeToken();
+        this.router.navigate(['auth', 'signin']);
     }
 
     signup(username: string, email: string, password: string) {
@@ -42,5 +43,9 @@ export class AuthService {
 
     resendVerificationToken(email: string) {
         return this.httpClient.post('http://localhost:8080/api/auth/verification-link', { email });
+    }
+
+    validateToken() {
+        return this.httpClient.get('http://localhost:8080/api/auth/validate-token');
     }
 }

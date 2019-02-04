@@ -54,7 +54,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 30px var(--color-1) inset !important;
-    -webkit-text-fill-color: var(--color-6) !important;
+    -webkit-text-fill-color: var(--color-3) !important;
 }
 
 button:hover {
@@ -65,7 +65,7 @@ button:focus {
     outline: none;
 }
 
-button, input {
+button {
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
 }
 

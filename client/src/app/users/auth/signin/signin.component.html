@@ -1,7 +1,7 @@
 <div>
     <div class="header">Sign In</div>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <div class="input-container">
+        <div class="input-container" [ngClass]="{'valid': email.valid}">
             <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
                     x="0px" y="0px" width="16px" height="16px" viewBox="0 0 550.795 550.795" style="enable-background:new 0 0 550.795 550.795;"
@@ -16,9 +16,9 @@
                     </g>
                 </svg>
             </div>
-            <input type="email" name="email" id="email" placeholder="Email" ngModel>
+            <input type="email" name="email" id="email" placeholder="Email" ngModel email required #email="ngModel">
         </div>
-        <div class="input-container">
+        <div class="input-container" [ngClass]="{'valid': password.valid}">
             <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
                     x="0px" y="0px" width="16px" height="16px" viewBox="0 0 124.133 124.133" style="enable-background:new 0 0 124.133 124.133;"
@@ -28,10 +28,13 @@
                     </g>
                 </svg>
             </div>
-            <input type="password" name="password" id="password" placeholder="Password" ngModel>
+            <input type="password" name="password" id="password" placeholder="Password" ngModel required #password="ngModel">
         </div>
         <div class="button-container">
-            <button type="submit">SIGN IN</button>
+            <button type="submit" [disabled]="!form.valid" [ngClass]="{'valid': form.valid}">SIGN IN</button>
+        </div>
+        <div class="message-container">
+            {{ message }}
         </div>
     </form>
 </div>
