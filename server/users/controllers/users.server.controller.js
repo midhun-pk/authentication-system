@@ -87,7 +87,7 @@ const sendVerificationMail = async (user, token) => {
         html: `
             <span>Hi</span></br></br>
             <p>Please verify your account by clicking the link
-               http://${config.domain || config.host + ':' + 4200}/user/verify/${token.token}
+               http://${config.domain || config.host + ':' + config.port}/user/verify/${token.token}
             </p>
             `
     };
@@ -107,7 +107,7 @@ exports.verifyUser = async (req, res) => {
     try {
         // Find the token from mongodb
         const foundToken = await Token.findOne({ token });
-        if (!foundToken) return res.status(401).send({ 'message': 'Token expired' });
+        if (!foundToken) return res.status(400).send({ 'message': 'Token expired' });
 
         // Find the user to whom this token is sent
         const user = await User.findOne({ _id: foundToken.user });
@@ -162,7 +162,7 @@ exports.signin = async (req, res) => {
  * @param {string} token: json web token
  */
 let getJwt = (user) => {
-    const expires = 1 * 60; // expires in 24 hours
+    const expires = config.auth.expires;
     const payload = { email: user.email, username: user.username, id: user._id }
     const token = jwt.sign(payload, config.auth.tokenSecret, {
         expiresIn: expires

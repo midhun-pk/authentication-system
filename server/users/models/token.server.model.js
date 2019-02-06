@@ -6,7 +6,8 @@
 
 const mongoose = require('mongoose'),
     crypto = require('crypto'),
-    Schema = mongoose.Schema;
+    Schema = mongoose.Schema,
+    config = require('../../../config/config');
 
 
 /*
@@ -27,7 +28,7 @@ let TokenSchema = new Schema({
         type: Date,
         required: true,
         default: Date.now,
-        expires: '2m'
+        expires: config.mailerAuthOptions.expires
     }
 });
 

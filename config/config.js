@@ -22,11 +22,13 @@ module.exports = {
         clientSecret: 'thD5Cnnb_wxDyuCGhAbqGs_y',
         refreshToken: '1/9eTD6Sg7Ombap4dIc_P1EgUoltFflB5s6217XV0FdOw',
         user: 'midhun19931@gmail.com',
+        expires: '2m' // Expires after 2 minutes
     },
     auth: {
         tokenSecret: process.env.TOKEN_SECRET || 'SECRET',
         sessionSecret: process.env.SESSION_SECRET || 'SECRET',
-        routeStart: '/api/auth/'
+        routeStart: '/api/auth/',
+        expires: 1 * 60 // Expires after 60 seconds
     },
     favicon: 'client/dist/authentication-system/favicon.ico',
     client: {
@@ -36,7 +38,8 @@ module.exports = {
     },
     server: {
         routes: [
-            'server/*/routes/*.js'
+            'server/users/routes/auth.server.routes.js',
+            'server/core/routes/core.server.routes.js'
         ]
     }
 }

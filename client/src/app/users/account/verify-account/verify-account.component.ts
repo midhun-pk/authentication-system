@@ -23,8 +23,9 @@ export class VerifyAccountComponent implements OnInit {
         this.message = successResponse['message'];
       },
       (errorResponse) => {
+        console.log(errorResponse);
         this.isVerificationSuccessful = false;
-        this.message = errorResponse.error.message;
+        this.message = errorResponse.error.message ? errorResponse.error.message : 'Sorry! Currently we are unable to process your request.';
       });
   }
 
