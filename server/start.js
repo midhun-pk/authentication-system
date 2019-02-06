@@ -1,0 +1,1 @@
+require('../config/app').start();

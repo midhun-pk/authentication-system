@@ -179,7 +179,7 @@ section {
 	width: 0;
 	height: 0;
 	border-top: 80px solid transparent;
-	border-right: 160px solid rgb(255, 255, 255, 0.15);
+	border-right: 160px solid rgba(255, 255, 255, 0.15);
     border-bottom: 80px solid transparent;
     transform: rotate(-45deg);
     transition: right .6s linear;
@@ -192,7 +192,7 @@ section {
 	width: 0;
 	height: 0;
 	border-top: 25px solid transparent;
-	border-right: 45px solid rgb(255, 255, 255, 0.15);
+	border-right: 45px solid rgba(255, 255, 255, 0.15);
     border-bottom: 25px solid transparent;
     transition: left .6s linear;
 }
@@ -204,7 +204,7 @@ section {
 	width: 0;
 	height: 0;
 	border-top: 40px solid transparent;
-	border-left: 80px solid rgb(255, 255, 255, 0.15);
+	border-left: 80px solid rgba(255, 255, 255, 0.15);
     border-bottom: 40px solid transparent;
     transition: right .6s linear;
     transform: rotate(45deg);
