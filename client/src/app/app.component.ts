@@ -17,6 +17,9 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.animationCompleted = true;
     }, 5000);
-    this.authService.pingServer().subscribe();
+    this.authService.pingServer().subscribe(
+      () => { },
+      (error) => { }
+    );
   }
 }

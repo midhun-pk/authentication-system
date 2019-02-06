@@ -23,7 +23,6 @@
   "homepage": "https://github.com/midhun-pk/authentication-system#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
     "ejs": "^2.6.1",
     "express.js": "^1.0.0",
     "glob": "^7.1.3",
