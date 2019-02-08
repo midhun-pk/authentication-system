@@ -4,6 +4,7 @@
   "description": "Full-stack authentication system without using any npm authentication package",
   "main": "index.js",
   "scripts": {
+    "build": "cd client && ng build --prod",
     "start": "node server/start.js"
   },
   "repository": {
