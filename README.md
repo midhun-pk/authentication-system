@@ -1,7 +1,7 @@
 # Authentication System
 > JSON Web Token (JWT) based authentication
 
-A MEAN stack application demonstrating token based authentication without using any packages such as Passport.js and secure email verification. JWT as defined on [JWT.io](https://jwt.io/) is an open industry standard method for transfering information securely between two parties.
+A MEAN stack application demonstrating token based authentication without using any packages such as Passport.js. JWT as defined on [JWT.io](https://jwt.io/) is an open industry standard method for transfering information securely between two parties.
 
 ## Prerequisits
 
