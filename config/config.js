@@ -18,17 +18,17 @@ module.exports = {
     },
     mailerAuthOptions: {
         type: 'OAuth2', // Obtains outhorization grant by interacting with the resource owner (user)
-        clientId: '994302662493-kej8pmcoa0kmsk94j23ga3k8khb94lfm.apps.googleusercontent.com',
-        clientSecret: 'thD5Cnnb_wxDyuCGhAbqGs_y',
-        refreshToken: '1/9eTD6Sg7Ombap4dIc_P1EgUoltFflB5s6217XV0FdOw',
-        user: 'midhun19931@gmail.com',
-        expires: '2m' // Expires after 2 minutes
+        clientId: '',
+        clientSecret: '',
+        refreshToken: '',
+        user: '', // Email address from which the verification mail should be sent to the user
+        expires: '2m' // Email verificcation token expires after 2 minutes
     },
     auth: {
         tokenSecret: process.env.TOKEN_SECRET || 'SECRET',
         sessionSecret: process.env.SESSION_SECRET || 'SECRET',
-        routeStart: '/api/auth/',
-        expires: 1 * 60 // Expires after 60 seconds
+        routeStart: '/api/auth/', // Starting string of authentication apis
+        expires: 1 * 60 // JWT token expires after 60 seconds
     },
     favicon: 'client/dist/authentication-system/favicon.ico',
     client: {

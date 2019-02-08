@@ -5,8 +5,6 @@ A MEAN stack application demonstrating email verification feature and JWT based 
 
 ## Prerequisits
 
-To run application:
-
 - Node.js
 - MongoDB
 
@@ -18,10 +16,18 @@ cd authentication-system
 npm install
 ```
 
-Start mongodb and run below command to start the application
+Start mongodb and run below command:
 
 ```shell
 npm start
 ```
+
+### Initial Configuration
+
+Make necessary changes to * config.js * in * authentication-system/config/config.js *.
+
+To activate email verication on signing up, make changes to * mailerAuthOptions * property in * config.js *
+Follow this [article]() to get the * clientId, clientSecret, refreshToken * to set up OAuth2 which is a secure way of allowing the application to use gmail service.
+
 
 
