@@ -43,7 +43,7 @@ cd authentication-system/client
 ng serve
 ```
 
-The above command serves the app that listens to localhost:4200
+The above command starts a server at localhost:4200
 
 ### Building
 
@@ -56,6 +56,14 @@ npm run build
 
 Folder **client/dist** will be created.
 
+## Features
+
+- Secure Email verification using OAuth 2.0
+- Secure information ranser between client and server using JSON Web Tokens
+
+## Licensing
+
+"The code in this project is licensed under MIT license."
 
 
 
