@@ -1,19 +1,14 @@
 # Authentication System
 > JSON Web Token (JWT) based authentication
 
-A MEAN stack application demonstrating email verification feature and JWT based authentication without using any packages such as Passport.js.
+A MEAN stack application demonstrating email verification feature and JWT based authentication without using any packages such as Passport.js. JWT as defined on [JWT.io](https://jwt.io/) is an open industry standard method for transfering information securely between two parties.
 
 ## Prerequisits
 
-For running the application:
+To run application:
 
-Node.js, 
-MongoDB
-
-For front-end development:
-
-Angular-cli
-
+- Node.js
+- MongoDB
 
 ## Installing / Getting started
 
@@ -23,8 +18,7 @@ cd authentication-system
 npm install
 ```
 
-Start mongodb
-Run the below command to start the application
+Start mongodb and run below command to start the application
 
 ```shell
 npm start
