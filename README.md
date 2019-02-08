@@ -11,6 +11,8 @@ A MEAN stack application demonstrating email verification feature and JWT based 
 
 ## Installing / Getting started
 
+Clone the repo and install dependencies:
+
 ```shell
 git clone https://github.com/midhun-pk/authentication-system.git
 cd authentication-system
@@ -20,7 +22,7 @@ npm install
 cd ..
 ```
 
-Start mongodb and run below command:
+Start mongodb and run below commands:
 
 ```shell
 npm run build
@@ -31,12 +33,12 @@ npm start
 
 Make necessary changes to **config.js** in **authentication-system/config/config.js**.
 
-To activate email verication on signing up, make changes to **mailerAuthOptions** property in **config.js**.
+To activate email verification when signing up, make changes to **mailerAuthOptions** property in **config.js**.
 Follow this [article](https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1) to get the **clientId, clientSecret, refreshToken** to set up OAuth2 which is a secure way of allowing the application to use gmail service.
 
 ## Developing
 
-For frontend development, run following commands:
+For frontend development:
 
 ```shell
 cd authentication-system/client
@@ -47,7 +49,7 @@ The above command starts a server at localhost:4200
 
 ### Building
 
-To build the frontend
+To build the frontend:
 
 ```shell
 cd authentication-system
@@ -60,6 +62,11 @@ Folder **client/dist** will be created.
 
 - Secure Email verification using OAuth 2.0
 - Secure information ranser between client and server using JSON Web Tokens
+
+## Contributing
+
+"If you'd like to contribute, please fork the repository and use a feature
+branch. Pull requests are warmly welcome."
 
 ## Licensing
 
